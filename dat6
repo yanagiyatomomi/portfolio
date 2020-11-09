@@ -1,0 +1,112 @@
+<html>
+
+<div id="js-for-web">
+  <h2 id="service-title">30DAYSトライアル</h2>
+  <p class="lead">1日1題30日でプログラマーになろう！</p>
+  <p class="lead">jQuery学習中</p>
+  <div class="login-area">
+    <a href="https://tokyofreelance.jp/" id="register" class="btn">ボタン</a>
+  </div>
+  <input id="user-status" type="text" value="user">
+  <!-- <button id="button" class="btn">クリック</button> -->
+</div>
+
+<!-- jQueryのライブラリー本体を読み込む -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- 必ずjQuery本体を読み込んだ後にjQueryで書いたファイルを読み込む-->
+<script src="js/practice.js"></script>
+
+
+
+
+===============
+ css
+===============
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+  background-color: #082B48;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: #082B48;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+#js-for-web {
+  width: 450px;
+  padding: 40px 0;
+  background-color: #fff;
+  color: #082B48;
+  text-align: center;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  background-color: #082B48;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-size: 24px;
+  padding: 20px 60px;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-register {
+  background-color: #ec6d64;
+}
+
+.btn-login {
+  background-color: blue;
+}
+
+.btn-withdraw {
+  background-color: gray;
+}
+
+#button {
+  margin:auto;
+}
+
+===============
+javascript+jqery
+===============
+$(function(){
+   const status = $('#user-status').val();
+   alert(status);
+   const button = $('#register')
+   if( status=== 'visiter' ){
+   button.text('登録');
+   button.removeClass('btn-login');
+   button.addClass('btn-register');
+}else if(status === 'user'){
+   button.text('ログイン');
+   button.removeClass('btn-regigter');
+   button.addClass('btn-login');
+   $('.login-area').appentd('<a href="https://tokyofreelance.jp/" class="btn btn-withdraw">退会</a>');
+}
+   
+});
